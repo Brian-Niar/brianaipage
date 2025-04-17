@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubiChess - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="RubiChess Logo">
+            </div>
+            <nav class="nav-menu">
+                <a href="admin.html" class="nav-item active">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+                <button onclick="logout()" class="nav-item logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <h1>Admin Dashboard</h1>
+                <div class="user-profile">
+                    <span class="user-name">Admin</span>
+                    <img src="assets/avatar.jpg" alt="Admin Avatar">
+                </div>
+            </header>
+
+            <!-- Users Section -->
+            <section class="users-section">
+                <div class="section-header">
+                    <h2>Registered Users</h2>
+                    <div class="search-container">
+                        <input type="text" id="searchUsers" placeholder="Search users...">
+                    </div>
+                </div>
+
+                <div class="users-grid" id="usersGrid">
+                    <!-- Users will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html> 

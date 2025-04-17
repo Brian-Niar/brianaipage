@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubiChess - Wallet</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/wallet.css">
+<link rel="shortcut icon" href="assets/logo.png" type="image/x-icon"></head>
+<body>
+    <div class="wallet-container">
+        <div class="wallet-box">
+            <div class="wallet-header">
+                <h2>My Wallet</h2>
+                <p>Manage your cryptocurrency assets</p>
+            </div>
+            
+            <div class="wallet-balance">
+                <p class="balance-label">Total Balance</p>
+                <p class="balance-amount" id="totalBalance">$0.00</p>
+            </div>
+            
+            <div class="wallet-content">
+                <div class="wallet-section">
+                    <h3>Assets</h3>
+                    <ul class="asset-list" id="assetList">
+                        <li class="asset-item">
+                            <div class="asset-info">
+                                <img src="assets/bitcoin.png" alt="Bitcoin" class="asset-icon">
+                                <span class="asset-name">Bitcoin (BTC)</span>
+                            </div>
+                            <span class="asset-amount">0.00000000</span>
+                        </li>
+                        <li class="asset-item">
+                            <div class="asset-info">
+                                <img src="assets/ethereum.png" alt="Ethereum" class="asset-icon">
+                                <span class="asset-name">Ethereum (ETH)</span>
+                            </div>
+                            <span class="asset-amount">0.00000000</span>
+                        </li>
+                        <li class="asset-item">
+                            <div class="asset-info">
+                                <img src="assets/binance.png" alt="Binance Coin" class="asset-icon">
+                                <span class="asset-name">Binance Coin (BNB)</span>
+                            </div>
+                            <span class="asset-amount">0.00000000</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="wallet-section">
+                    <h3>Recent Transactions</h3>
+                    <ul class="transaction-list" id="transactionList">
+                        <li class="transaction-item">
+                            <div class="transaction-header">
+                                <span class="transaction-type">Buy Bitcoin</span>
+                                <span class="transaction-amount positive">+0.001 BTC</span>
+                            </div>
+                            <div class="transaction-details">
+                                <p>Today at 14:30</p>
+                            </div>
+                        </li>
+                        <li class="transaction-item">
+                            <div class="transaction-header">
+                                <span class="transaction-type">Sell Ethereum</span>
+                                <span class="transaction-amount negative">-0.5 ETH</span>
+                            </div>
+                            <div class="transaction-details">
+                                <p>Yesterday at 09:15</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-secondary" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+                <button class="btn-primary" onclick="window.location.href='trade.html'">Trade Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/wallet.js"></script>
+</body>
+</html> 

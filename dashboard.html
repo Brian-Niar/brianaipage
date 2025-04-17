@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubiChess - Dashboard</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="shortcut icon" href="assets/logo.png" type="image/x-icon"></head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img  src="assets/logo.png" alt="RubiChess Logo">
+            </div>
+
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item active">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+                <a href="assets.html" class="nav-item">
+                    <i class="fas fa-coins"></i>
+                    Assets
+                </a>
+                <a href="trade.html" class="nav-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    Trade
+                </a>
+                <a href="wallet.html" class="nav-item">
+                    <i class="fas fa-wallet"></i>
+                    Wallet
+                </a>
+                <button onclick="handleLogout()" class="nav-item logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Dashboard</h1>
+                    <div class="header-actions">
+                        <div class="user-profile">
+                            <img src="assets/default-avatar.png" alt="User Avatar" class="user-avatar">
+                            <span class="user-name">User Name</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Portfolio Section -->
+            <section class="portfolio-section">
+                <div class="portfolio-header">
+                    <h2>Portfolio</h2>
+                    <div class="portfolio-balance">
+                        <h3>$17,643.41</h3>
+                        <span class="portfolio-change">+$27,483.00</span>
+                    </div>
+                </div>
+                <div class="portfolio-chart" id="portfolioChart">
+                    
+                </div>
+            </section>
+
+            <!-- Assets Grid -->
+            <section class="assets-grid">
+                <div class="asset-card">
+                    <img src="assets/bitcoin.png" alt="Bitcoin">
+                    <div class="asset-info">
+                        <h3>1.25 BTC</h3>
+                        <span class="asset-change positive">+0.14%</span>
+                    </div>
+                </div>
+                <div class="asset-card">
+                    <img src="assets/Litecoin.png" alt="Litecoin">
+                    <div class="asset-info">
+                        <h3>0.32 LTC</h3>
+                        <span class="asset-change positive">+0.31%</span>
+                    </div>
+                </div>
+                <div class="asset-card">
+                    <img src="assets/ethereum.png" alt="Ethereum">
+                    <div class="asset-info">
+                        <h3>1.25 ETH</h3>
+                        <span class="asset-change positive">+0.27%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Overview -->
+            <section class="market-section">
+                <div class="market-header">
+                    <h2>Market is down 0.80%</h2>
+                    <div class="market-filters">
+                        <select id="timeFilter">
+                            <option value="24h">24h</option>
+                            <option value="7d">7d</option>
+                            <option value="30d">30d</option>
+                        </select>
+                        <select id="gainersFilter">
+                            <option value="top">Top gainers</option>
+                            <option value="losers">Top losers</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="market-table" id="marketTable">
+                    <!-- Table will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function handleLogout() {
+            localStorage.removeItem('isAuthenticated');
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 

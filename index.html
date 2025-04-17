@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubiChess - Login</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/login.css">
+<link rel="shortcut icon" href="assets/logo.png" type="image/x-icon"></head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="assets/logo.png" alt="RubiChess Logo">
+            </div>
+            <h1>Welcome to RubiChess</h1>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+            <div class="additional-options">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <a href="signup.html" class="create-account">Create Account</a>
+            </div>
+        </div>
+        <div class="alert-container">
+            <div class="alert-box">
+                <div class="alert-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="alert-message"></div>
+                <button class="alert-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/db.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html> 

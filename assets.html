@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubiChess - Assets</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/assets.css">
+<link rel="shortcut icon" href="assets/logo.png" type="image/x-icon"></head>
+<body>
+    <div class="assets-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="RubiChess Logo">
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </a>
+                <a href="assets.html" class="nav-item active">
+                    <i class="fas fa-coins"></i>
+                    Assets
+                </a>
+                <a href="trade.html" class="nav-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    Trade
+                </a>
+                <a href="wallet.html" class="nav-item">
+                    <i class="fas fa-wallet"></i>
+                    Wallet
+                </a>
+                <button onclick="handleLogout()" class="nav-item logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <h1>Assets Overview</h1>
+                <div class="user-profile">
+                    <span class="user-name">Loading...</span>
+                    <img src="assets/avatar.jpg" alt="User Avatar">
+                </div>
+            </header>
+
+            <!-- Portfolio Summary -->
+            <section class="portfolio-summary">
+                <div class="summary-card total-value">
+                    <h3>Total Portfolio Value</h3>
+                    <p class="value">$0.00</p>
+                    <span class="change positive">+0.00%</span>
+                </div>
+                <div class="summary-card available-balance">
+                    <h3>Available Balance</h3>
+                    <p class="value">$0.00</p>
+                    <button class="deposit-btn">Deposit</button>
+                </div>
+            </section>
+
+            <!-- Assets List -->
+            <section class="assets-list">
+                <div class="section-header">
+                    <div class="back-to-dashboard">
+                        <a href="dashboard.html">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Dashboard
+                        </a>
+                    </div>
+                    <h2>Your Assets</h2>
+                    <div class="controls">
+                        <input type="text" id="searchAsset" placeholder="Search assets...">
+                        <select id="sortAssets">
+                            <option value="value">Sort by Value</option>
+                            <option value="name">Sort by Name</option>
+                            <option value="change">Sort by Change</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="assets-table-container">
+                    <table class="assets-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Price</th>
+                                <th>Holdings</th>
+                                <th>Value</th>
+                                <th>24h Change</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assetsTableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function handleLogout() {
+            localStorage.removeItem('isAuthenticated');
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/assets.js"></script>
+</body>
+</html> 
